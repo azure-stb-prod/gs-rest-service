@@ -28,3 +28,7 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
+    - name: printing secrets
+      run: echo "ENVIRONMENT_PROD_SECRET ${{secrets.ENVIRONMENT_PROD_SECRET}} ,ENVIRONMENT_PROD_SECRET ${{secrets.REPOSITORY_PROD_SECRET}} , REPOSITORY_PROD_SECRET ${{secrets.ORGANISATION_PROD_SECRET}} "
+      
