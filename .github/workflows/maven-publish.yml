@@ -5,6 +5,9 @@ name: Maven Package
 
 on:
   workflow_dispatch
+  
+env:
+  ENV_PROD_SECRET: ${{ secrets.ENVIRONMENT_PROD_SECRET }}
 
 jobs:
   build:
@@ -30,5 +33,5 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: printing secrets
-      run: echo "ENVIRONMENT_PROD_SECRET ${{secrets.ENVIRONMENT_PROD_SECRET}} ,ENVIRONMENT_PROD_SECRET ${{secrets.REPOSITORY_PROD_SECRET}} , REPOSITORY_PROD_SECRET ${{secrets.ORGANISATION_PROD_SECRET}} "
+      run: env
       
