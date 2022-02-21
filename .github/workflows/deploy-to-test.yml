@@ -7,8 +7,9 @@ on: workflow_dispatch
 
 jobs:
   print:
-    - name: printing message
-      run: echo "Running test yml file"
+    steps:
+      - name: printing message
+        run: echo "Running test yml file"
 
   deploy-test:
   uses: ./.github/workflows/build.yml
